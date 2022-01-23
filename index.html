@@ -17,11 +17,11 @@
         <div class="app-header">
           <div class="seat-controls">
               <!-- -- header-controls -->
-              <div class="seat-position" v-for="(value, key) in seatControls">
+              <div class="seat-position" v-for="(value) in seatControls"> <!-- must need to take "value" -->
                 <div
                   class="seat-position-color"
-                  :style="{backgroundColor: value.color}"
-                ></div>
+                  :style="{backgroundColor: value.color}" 
+                ></div>  <!-- must need to take "value" -->
                 <div class="seat-position-text">{{ value.text }}</div>
               </div>
               <!-- -- header-controls  -->

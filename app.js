@@ -2,7 +2,7 @@ const app = Vue.createApp({
     
     data(){
         return{
-            seatControls: {
+            seatControls: { // get seat control with object format
                 sold: {
                   text: "Sold",
                   color: "#ff0000"
@@ -20,7 +20,7 @@ const app = Vue.createApp({
                   color: "green"
                 }
             },
-            seats: [
+            seats: [   // Get all seats - show view part with loop and class binding - then stying it - then write methods
                 {
                   name: "A1",
                   type: "available",
@@ -146,8 +146,13 @@ const app = Vue.createApp({
     },
     methods: {
         handleClick(i){
-            let clickedSeat = this.seats[i];
-            clickedSeat.type = "selected"
+            const clickedSeat = this.seats[i];       // get clicked seat
+            if (clickedSeat.type === "sold" || clickedSeat.type === "booked") {   //if seat solded it will not select
+                alert('Seat is Solded'); 
+                return;       // retun typed otherwise under code will be executed
+            }
+            clickedSeat.type =  clickedSeat.type === "selected" ? "available" : "selected";  // select / deselect
+
             console.log(clickedSeat);
         }
     },
