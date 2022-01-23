@@ -10,8 +10,29 @@
 <body>
 
     <div id="app">
+      <h2 class="app-title"> Online - Ticket Booking - App </h2>
+      <div class="app-container">
 
-   </div>
+        <div class="app-header">
+          <div class="seat-controls">
+              <!-- -- header-controls -->
+              <div class="seat-position" v-for="(value, key) in seatControls">
+                <div
+                  class="seat-position-color"
+                  :style="{backgroundColor: value.color}"
+                ></div>
+                <div class="seat-position-text">{{ value.text }}</div>
+              </div>
+              <!-- -- header-controls  -->
+          </div>
+        </div> <!-- -- /app-header -->
+
+        <div class="app-body">
+          
+        </div> <!-- -- /app-body -->
+
+      </div>  <!-- -- /app-container -->
+   </div>  <!-- -- /app -->
     
     <script src="app.js"></script>
   </body>
