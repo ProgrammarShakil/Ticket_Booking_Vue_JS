@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue JS Ticket Booking App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="vue.js"></script>
 </head>
@@ -28,7 +29,43 @@
         </div> <!-- -- /app-header -->
 
         <div class="app-body">
-          
+
+          <div class="app-body-left">
+            <div class="seat-container">
+
+              <div class="left-side-seat-door">
+                  <i class="fas fa-bus"></i>
+              </div> <!-- -- /left-side-seat -->
+
+              <div class="right-side-seat-driver">
+                 <i class="fas fa-user-tie "></i>
+              </div> <!-- -- /right-side-seat -->
+
+            </div> <!-- -- /seat-container -->
+
+            <div class="seats">
+              <div
+                class="seat"
+                :class="{
+                  'seat--sold': seat.type === 'sold',
+                  'seat--booked': seat.type === 'booked',
+                  'seat--selected': seat.type === 'selected'
+                  
+                }"
+                v-for="(seat, i) in seats"
+                :key="seat.name"
+                @click="handleClick(i)"
+              >
+                {{seat.name}}
+              </div>
+            </div>
+
+          </div> <!-- -- /app-body-left -->
+
+          <div class="app-body-right">
+
+          </div> <!-- -- /app-body-right -->
+
         </div> <!-- -- /app-body -->
 
       </div>  <!-- -- /app-container -->

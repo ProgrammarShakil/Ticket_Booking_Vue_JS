@@ -12,9 +12,12 @@ body {
     line-height: 1.8;
     color: aliceblue;
 }
-
-/* ------------------- /Common css -------------------------  */
-/*---------------------- App css  ---------------------------*/
+/* ---------------Fontawesome css ------------------------------*/
+.fas{
+    font-size: 1.7rem;
+}
+/* ------------------- /Common css ---------------------------  */
+/*---------------------- App css  ------------------------------*/
 
 .app-title {
     margin-top: 50px;
@@ -27,19 +30,33 @@ body {
     width: 600px;
     max-width: 100%;
     margin: 22px auto;
-    min-height: 300px;
+    min-height: 500px;
     padding: 11px;
     position: relative;
     border-radius: 5px;
     box-shadow: 0 0 3px 2px #a86565;
 }
 
-/* ----------------------- /App css -------------------------- */
+.app-body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+.app-body-right{
+    display: flex;
+    min-width: 270px;
+    border: 1px solid gray;
+}
+
+/* ----------------------- /App css -------------------------------- */
 /* ----------------------- seat-position Controll ------------------ */
 
 .seat-controls {
     display: flex;
     justify-content: space-around;
+    border: 1px solid gray;
+    padding: 1rem;
 }
 
 .seat-position {
@@ -47,7 +64,6 @@ body {
     min-height: 5px;
     min-width: 33px;
     display: flex;
-    margin-right: 22px;
 }
 
 .seat-position-color{
@@ -62,6 +78,57 @@ body {
     line-height: 1.4;
     margin-left: .5rem;
 }
+.seat-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-top: 0px;
+    width: 280px;
+}
+.left-side-seat-door{
+    
+    border: 1px solid gray;
+    padding: 1rem 2.5rem;
+}
+.right-side-seat-driver{
+    
+    border: 1px solid gray;
+    padding: 1rem 2.5rem;
+}
+.seats {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 11px;
+    margin-left: -4px;
+  }
+  
+.seat {
+    text-align: center;
+    margin: 4px;
+    border: 1px solid gray;
+    padding: 3px;
+    min-height: 11px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 4rem;
+  }
+  .seat--sold {
+    background-color: red;
+    color: #fff;
+  }
+  
+  .seat--booked {
+    background-color: rgb(114, 109, 177);
+  }
+  
+  .seat--selected {
+    background-color: green;
+  }
+  
+  .seat:hover {
+    font-weight: bold;
+  }
 
 /* ----------------------- /seat-position Controll ----------------- */
 
