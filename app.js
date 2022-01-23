@@ -151,11 +151,34 @@ const app = Vue.createApp({
                 alert('Seat is Solded'); 
                 return;       // retun typed otherwise under code will be executed
             }
+
+            if (this.selectedSeats.length >= 3) {
+                alert("You Can Select 3 Seats");
+                return;
+            }
+
             clickedSeat.type =  clickedSeat.type === "selected" ? "available" : "selected";  // select / deselect
 
             console.log(clickedSeat);
         }
     },
+    computed:{
+        selectedSeats(){
+            let selectSeat = this.seats.filter((seatItem) => seatItem.type === 'selected')
+            return selectSeat;  // filtered selected items object data 
+        },
+
+        totalCost() {
+            let total_Cost = 0;
+            this.selectedSeats.forEach((seat) => {   
+              // target computed property function "selectedSeats()" - use forEach to get price
+              // get parameter any name as like 'seat' - to get price
+                total_Cost =  total_Cost + seat.price;
+            });
+      
+            return total_Cost;  // show total cost
+          }
+    }  // 
 })
 
 app.mount('#app');

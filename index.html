@@ -63,6 +63,42 @@
           </div> <!-- -- /app-body-left -->
 
           <div class="app-body-right">
+            
+            <div class="d-flex">
+
+              <div class="flex-item" v-if="selectedSeats.length === 0">
+                No Seats Selected Yet
+              </div>
+
+              <div v-else="">
+                <table class="selected-seats">
+
+                  <thead>
+                    <tr>
+                      <th>Seat</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <tr v-for="(seat, i) in selectedSeats" :key="seat.name">
+                      <td>{{seat.name}}</td>
+                      <td>Tk. {{seat.price}}</td>
+                    </tr>
+  
+
+                    <tr>
+                      <th>Total</th>
+                      <th>Tk. {{totalCost}}</th>
+                    </tr>
+
+                  </tbody>
+                  
+                </table>
+              </div> <!-- v-else-->
+
+            </div> <!-- d-flex -->
 
           </div> <!-- -- /app-body-right -->
 

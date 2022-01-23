@@ -12,6 +12,12 @@ body {
     line-height: 1.8;
     color: aliceblue;
 }
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ---------------Fontawesome css ------------------------------*/
 .fas{
     font-size: 1.7rem;
@@ -20,10 +26,13 @@ body {
 /*---------------------- App css  ------------------------------*/
 
 .app-title {
-    margin-top: 50px;
     text-align: center;
     font-style: italic;
     font-family: Arial, sans-serif;
+    box-shadow: 0 0 3px 2px #a86565;
+    width: 600px;
+    margin: 50px auto 20px;
+    border-radius: 5px;
 }
 
 .app-container {
@@ -45,6 +54,7 @@ body {
 
 .app-body-right{
     display: flex;
+    justify-content: center;
     min-width: 270px;
     border: 1px solid gray;
 }
@@ -131,4 +141,15 @@ body {
   }
 
 /* ----------------------- /seat-position Controll ----------------- */
+/* ----------------------- Selected Seats Table ----------------- */
+.selected-seats{
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+.selected-seats, th, td{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 10px 20px;
+}
+/* ----------------------- /Selected Seats Table ----------------- */
 
